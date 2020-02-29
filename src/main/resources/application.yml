@@ -1,0 +1,6 @@
+
+#Server properties
+server:
+  servlet:
+    context-path: /tour-api
+  port: 9090
