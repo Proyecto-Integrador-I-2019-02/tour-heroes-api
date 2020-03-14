@@ -1,20 +1,33 @@
 package co.udea.heroes.api.model;
 
-public class Hero {
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
-    private int id;
+@Entity
+@Table(name = "heroes")
+public class Hero {
+    @Id
+    @Column(name = "id")
+    private Integer id;
+
+    @NotNull
+    @Column(name = "nombre")
     private String name;
 
-    public Hero(int id, String name){
+    public Hero(){
+
+    }
+
+    public Hero(Integer id, String name){
         this.id = id;
         this.name = name;
     }
 
-    public int getId(){
+    public Integer getId(){
         return id;
     }
 
-    public void setId(int id){
+    public void setId(Integer id){
         this.id = id;
     }
 
